@@ -1,46 +1,32 @@
 import React from 'react'
-import logo from './logo.svg';
+import Register from './components/Register.js'
 import './App.css';
 
-class App extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {apiResponse:""}
-  }
+// class App extends React.Component {
+//   constructor(props){
+//     super(props)
+//     this.state = {apiResponse:""}
+//   }
 
-  callApi(){
-    fetch("http://localhost:9000/testApi")
-    .then(res => res.text())
-    .then(res => this.setState({apiResponse: res}))
-  }
+//   callApi(){
+//     fetch("http://localhost:9000/testApi")
+//     .then(res => res.text())
+//     .then(res => this.setState({apiResponse: res}))
+//   }
 
-  componentWillMount(){
-    this.callApi()
-  }
+//   componentWillMount(){
+//     this.callApi()
+//   }
 
 
 
-  render() {
+  function App() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-        <p>{this.state.apiResponse}</p>
+          <Register />
       </div>
     );
   }
-}
+//}
 
 export default App;
